@@ -22,7 +22,7 @@ namespace WindowsTitleBarBug {
             AbsoluteLayout topBar = new AbsoluteLayout();
             topBar.BackgroundColor = Colors.White;
             topBar.HeightRequest = 40;
-            absoluteLayout.Add(topBar); 
+            absoluteLayout.Add(topBar);
 
             //RESIZER
             contentPage.SizeChanged += delegate {
@@ -39,7 +39,7 @@ namespace WindowsTitleBarBug {
 
             //OSCILLATOR
             var timer = Application.Current.Dispatcher.CreateTimer();
-            timer.Interval = TimeSpan.FromSeconds(1/30.0);
+            timer.Interval = TimeSpan.FromSeconds(1 / 30.0);
             DateTime lastDateTime = DateTime.Now;
             double timerTime = 0;
             timer.Tick += delegate {
@@ -48,8 +48,16 @@ namespace WindowsTitleBarBug {
                 lastDateTime = DateTime.Now;
             };
             timer.Start();
-            
+
 
         }
+        protected override Window CreateWindow(IActivationState activationState) {
+            
+            Window window = base.CreateWindow(activationState);
+            window.Title = "HELLO APPLICATION";
+            return window;
+
+        }
+
     }
 }

@@ -32,7 +32,7 @@ namespace WindowsTitleBarBug {
                         IntPtr wHandle = WinRT.Interop.WindowNative.GetWindowHandle(w);
                         WindowId windowId = Win32Interop.GetWindowIdFromWindow(wHandle);
                         AppWindow appWindow = AppWindow.GetFromWindowId(windowId);
-                        var titleBar = appWindow.TitleBar;                                
+                        var titleBar = appWindow.TitleBar;         
                         titleBar.BackgroundColor = Microsoft.Maui.Graphics.Colors.GreenYellow.ToWindowsColor();
                         titleBar.ButtonBackgroundColor = Microsoft.Maui.Graphics.Colors.GreenYellow.ToWindowsColor();                                             
                         titleBar.InactiveBackgroundColor = Microsoft.Maui.Graphics.Colors.LightGrey.ToWindowsColor();    
